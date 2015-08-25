@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Service.h"
+#import "FriendsCell.h"
+#import "Friendsinfomap.h"
+#define LOCAL @"friendsinfo.json"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
+@property (nonatomic) UITableView *friendsTableView;
 
 @end
 

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49087F551B8ABD9A009302F8 /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 49087F541B8ABD9A009302F8 /* header.png */; };
+		49087F571B8AED34009302F8 /* headicron.png in Resources */ = {isa = PBXBuildFile; fileRef = 49087F561B8AED34009302F8 /* headicron.png */; };
+		49087F5A1B8AF413009302F8 /* ReadJsonfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 49087F591B8AF413009302F8 /* ReadJsonfile.m */; };
+		49087F5D1B8AF42C009302F8 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 49087F5C1B8AF42C009302F8 /* Service.m */; };
+		49087F601B8AF5C5009302F8 /* FriendsInfoList.m in Sources */ = {isa = PBXBuildFile; fileRef = 49087F5F1B8AF5C5009302F8 /* FriendsInfoList.m */; };
+		49087F621B8AFAA9009302F8 /* friendsinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 49087F611B8AFAA9009302F8 /* friendsinfo.json */; };
 		495F6E481B86B92000B6C623 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 495F6E471B86B92000B6C623 /* main.m */; };
 		495F6E4B1B86B92000B6C623 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 495F6E4A1B86B92000B6C623 /* AppDelegate.m */; };
 		495F6E4E1B86B92000B6C623 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 495F6E4D1B86B92000B6C623 /* ViewController.m */; };
@@ -14,6 +20,16 @@
 		495F6E531B86B92000B6C623 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 495F6E521B86B92000B6C623 /* Images.xcassets */; };
 		495F6E561B86B92000B6C623 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 495F6E541B86B92000B6C623 /* LaunchScreen.xib */; };
 		495F6E621B86B92000B6C623 /* FriendCircleAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 495F6E611B86B92000B6C623 /* FriendCircleAppTests.m */; };
+		4973C5021B8AFBAB003B280A /* contentimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4973C5011B8AFBAB003B280A /* contentimage.png */; };
+		4973C5051B8B0090003B280A /* Friendsinfomap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4973C5041B8B0090003B280A /* Friendsinfomap.m */; };
+		4973C5091B8B0DDD003B280A /* commentimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4973C5081B8B0DDD003B280A /* commentimage.png */; };
+		4973C50C1B8B1148003B280A /* contentimage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4973C50A1B8B1148003B280A /* contentimage1.png */; };
+		4973C50D1B8B1148003B280A /* contentimage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4973C50B1B8B1148003B280A /* contentimage2.png */; };
+		4973C50F1B8B1151003B280A /* icron1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4973C50E1B8B1151003B280A /* icron1.png */; };
+		4973C5111B8B1267003B280A /* headimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4973C5101B8B1267003B280A /* headimage.png */; };
+		4973C5141B8B18D4003B280A /* ViewRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4973C5131B8B18D4003B280A /* ViewRootController.m */; };
+		49DE377C1B89BAAF009A5719 /* FriendsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DE377B1B89BAAF009A5719 /* FriendsCell.m */; };
+		49DE37821B89C376009A5719 /* iCron.png in Resources */ = {isa = PBXBuildFile; fileRef = 49DE37811B89C376009A5719 /* iCron.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +43,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49087F541B8ABD9A009302F8 /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = header.png; path = ../../../Downloads/header.png; sourceTree = "<group>"; };
+		49087F561B8AED34009302F8 /* headicron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = headicron.png; path = ../../headicron.png; sourceTree = "<group>"; };
+		49087F581B8AF413009302F8 /* ReadJsonfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReadJsonfile.h; path = ../../IOStest/TestTableView/TestTableView/ReadJsonfile.h; sourceTree = "<group>"; };
+		49087F591B8AF413009302F8 /* ReadJsonfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReadJsonfile.m; path = ../../IOStest/TestTableView/TestTableView/ReadJsonfile.m; sourceTree = "<group>"; };
+		49087F5B1B8AF42C009302F8 /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Service.h; path = ../../IOStest/TestTableView/Service.h; sourceTree = "<group>"; };
+		49087F5C1B8AF42C009302F8 /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Service.m; path = ../../IOStest/TestTableView/Service.m; sourceTree = "<group>"; };
+		49087F5E1B8AF5C5009302F8 /* FriendsInfoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsInfoList.h; sourceTree = "<group>"; };
+		49087F5F1B8AF5C5009302F8 /* FriendsInfoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsInfoList.m; sourceTree = "<group>"; };
+		49087F611B8AFAA9009302F8 /* friendsinfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = friendsinfo.json; sourceTree = "<group>"; };
 		495F6E421B86B92000B6C623 /* FriendCircleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendCircleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		495F6E461B86B92000B6C623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		495F6E471B86B92000B6C623 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +65,19 @@
 		495F6E5B1B86B92000B6C623 /* FriendCircleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FriendCircleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		495F6E601B86B92000B6C623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		495F6E611B86B92000B6C623 /* FriendCircleAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendCircleAppTests.m; sourceTree = "<group>"; };
+		4973C5011B8AFBAB003B280A /* contentimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = contentimage.png; path = ../../contentimage.png; sourceTree = "<group>"; };
+		4973C5031B8B0090003B280A /* Friendsinfomap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friendsinfomap.h; sourceTree = "<group>"; };
+		4973C5041B8B0090003B280A /* Friendsinfomap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friendsinfomap.m; sourceTree = "<group>"; };
+		4973C5081B8B0DDD003B280A /* commentimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = commentimage.png; path = ../../commentimage.png; sourceTree = "<group>"; };
+		4973C50A1B8B1148003B280A /* contentimage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = contentimage1.png; path = ../../contentimage1.png; sourceTree = "<group>"; };
+		4973C50B1B8B1148003B280A /* contentimage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = contentimage2.png; path = ../../contentimage2.png; sourceTree = "<group>"; };
+		4973C50E1B8B1151003B280A /* icron1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icron1.png; path = ../../icron1.png; sourceTree = "<group>"; };
+		4973C5101B8B1267003B280A /* headimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = headimage.png; path = ../../headimage.png; sourceTree = "<group>"; };
+		4973C5121B8B18D4003B280A /* ViewRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewRootController.h; sourceTree = "<group>"; };
+		4973C5131B8B18D4003B280A /* ViewRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewRootController.m; sourceTree = "<group>"; };
+		49DE377A1B89BAAF009A5719 /* FriendsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsCell.h; sourceTree = "<group>"; };
+		49DE377B1B89BAAF009A5719 /* FriendsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsCell.m; sourceTree = "<group>"; };
+		49DE37811B89C376009A5719 /* iCron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iCron.png; path = ../../iCron.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +119,14 @@
 		495F6E441B86B92000B6C623 /* FriendCircleApp */ = {
 			isa = PBXGroup;
 			children = (
+				49DE37791B89BA47009A5719 /* Model */,
+				49DE37781B89BA3B009A5719 /* Service */,
 				495F6E491B86B92000B6C623 /* AppDelegate.h */,
 				495F6E4A1B86B92000B6C623 /* AppDelegate.m */,
+				49DE377A1B89BAAF009A5719 /* FriendsCell.h */,
+				49DE377B1B89BAAF009A5719 /* FriendsCell.m */,
+				4973C5121B8B18D4003B280A /* ViewRootController.h */,
+				4973C5131B8B18D4003B280A /* ViewRootController.m */,
 				495F6E4C1B86B92000B6C623 /* ViewController.h */,
 				495F6E4D1B86B92000B6C623 /* ViewController.m */,
 				495F6E4F1B86B92000B6C623 /* Main.storyboard */,
@@ -96,8 +140,18 @@
 		495F6E451B86B92000B6C623 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4973C5101B8B1267003B280A /* headimage.png */,
+				4973C50E1B8B1151003B280A /* icron1.png */,
+				4973C50A1B8B1148003B280A /* contentimage1.png */,
+				4973C50B1B8B1148003B280A /* contentimage2.png */,
+				4973C5081B8B0DDD003B280A /* commentimage.png */,
+				4973C5011B8AFBAB003B280A /* contentimage.png */,
+				49087F561B8AED34009302F8 /* headicron.png */,
+				49087F541B8ABD9A009302F8 /* header.png */,
+				49DE37811B89C376009A5719 /* iCron.png */,
 				495F6E461B86B92000B6C623 /* Info.plist */,
 				495F6E471B86B92000B6C623 /* main.m */,
+				49087F611B8AFAA9009302F8 /* friendsinfo.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -117,6 +171,28 @@
 				495F6E601B86B92000B6C623 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49DE37781B89BA3B009A5719 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				49087F5B1B8AF42C009302F8 /* Service.h */,
+				49087F5C1B8AF42C009302F8 /* Service.m */,
+				49087F581B8AF413009302F8 /* ReadJsonfile.h */,
+				49087F591B8AF413009302F8 /* ReadJsonfile.m */,
+				4973C5031B8B0090003B280A /* Friendsinfomap.h */,
+				4973C5041B8B0090003B280A /* Friendsinfomap.m */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		49DE37791B89BA47009A5719 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49087F5E1B8AF5C5009302F8 /* FriendsInfoList.h */,
+				49087F5F1B8AF5C5009302F8 /* FriendsInfoList.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,9 +275,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4973C50D1B8B1148003B280A /* contentimage2.png in Resources */,
+				4973C50F1B8B1151003B280A /* icron1.png in Resources */,
 				495F6E511B86B92000B6C623 /* Main.storyboard in Resources */,
+				4973C5111B8B1267003B280A /* headimage.png in Resources */,
+				4973C50C1B8B1148003B280A /* contentimage1.png in Resources */,
+				4973C5021B8AFBAB003B280A /* contentimage.png in Resources */,
+				49087F571B8AED34009302F8 /* headicron.png in Resources */,
 				495F6E561B86B92000B6C623 /* LaunchScreen.xib in Resources */,
 				495F6E531B86B92000B6C623 /* Images.xcassets in Resources */,
+				49087F551B8ABD9A009302F8 /* header.png in Resources */,
+				4973C5091B8B0DDD003B280A /* commentimage.png in Resources */,
+				49087F621B8AFAA9009302F8 /* friendsinfo.json in Resources */,
+				49DE37821B89C376009A5719 /* iCron.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +305,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4973C5051B8B0090003B280A /* Friendsinfomap.m in Sources */,
+				49087F601B8AF5C5009302F8 /* FriendsInfoList.m in Sources */,
+				4973C5141B8B18D4003B280A /* ViewRootController.m in Sources */,
 				495F6E4E1B86B92000B6C623 /* ViewController.m in Sources */,
 				495F6E4B1B86B92000B6C623 /* AppDelegate.m in Sources */,
 				495F6E481B86B92000B6C623 /* main.m in Sources */,
+				49DE377C1B89BAAF009A5719 /* FriendsCell.m in Sources */,
+				49087F5A1B8AF413009302F8 /* ReadJsonfile.m in Sources */,
+				49087F5D1B8AF42C009302F8 /* Service.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +510,7 @@
 				495F6E671B86B92000B6C623 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		495F6E681B86B92000B6C623 /* Build configuration list for PBXNativeTarget "FriendCircleAppTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +519,7 @@
 				495F6E6A1B86B92000B6C623 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
