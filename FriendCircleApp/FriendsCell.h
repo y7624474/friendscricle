@@ -18,4 +18,6 @@
 @property UIImageView *commentImage;
 @property UILabel *nameLabel;
 @property UIView * separator;
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier boolImage:(BOOL) boolimage;
 @end

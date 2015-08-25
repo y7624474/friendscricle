@@ -12,6 +12,8 @@
 {
     Service *servce;
     NSMutableArray* info;
+    NSInteger cellhight;
+    NSMutableDictionary* dicheight;
 }
 @end
 
@@ -21,8 +23,9 @@
     [super viewDidLoad];
     servce=[Service new];
     info=[servce readJson:LOCAL];
+    dicheight=[NSMutableDictionary dictionary];
+    cellhight=250;
     [self initView];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 -(void)initView{
@@ -41,34 +44,44 @@
     FriendsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellWithIdentifier];
     
     if (cell == nil) {
-        cell = [[FriendsCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellWithIdentifier];
+        cell = [[FriendsCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellWithIdentifier boolImage:[self heightCell:indexPath]];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     NSUInteger row = [indexPath row];
     
     FriendsInfoList *friendsinfolist=(FriendsInfoList*)[Friendsinfomap friendsInfo:[info objectAtIndex:row]];
 
-    NSString *icronPath = [[NSBundle mainBundle] pathForResource:friendsinfolist.icron ofType:@"png"];
-    NSData *icronimage = [NSData dataWithContentsOfFile:icronPath];
-    UIImage *icron = [UIImage imageWithData:icronimage];
-    cell.icronImage.image=icron;
+
+    cell.icronImage.image=[self loadImage:friendsinfolist.icron];
     cell.nameLabel.text=friendsinfolist.name;
     cell.contentLabel.text=friendsinfolist.content;
-    
-    NSString *contentimagePath = [[NSBundle mainBundle] pathForResource:friendsinfolist.imagecontent ofType:@"png"];
-    NSData *contentimagedata = [NSData dataWithContentsOfFile:contentimagePath];
-    UIImage *contentimage = [UIImage imageWithData:contentimagedata];
-    cell.contentImage.image=contentimage;
-    
-    NSString *commentimagePath = [[NSBundle mainBundle] pathForResource:@"commentimage" ofType:@"png"];
-    NSData *commentimagedata = [NSData dataWithContentsOfFile:commentimagePath];
-    UIImage *commentimage = [UIImage imageWithData:commentimagedata];
-    cell.commentImage.image=commentimage;
-    
+    if ([self heightCell:indexPath]) {
+        cell.contentImage.image=[self loadImage:friendsinfolist.imagecontent];
+    }
+    cell.commentImage.image=[self loadImage:@"commentimage"];
     cell.timeLabel.text=friendsinfolist.time;
     cell.commentLabel.text=friendsinfolist.comments;
     
+    
     return cell;
+}
+
+-(BOOL)heightCell:(NSIndexPath *)indexPath
+{
+    NSString* strtemp=[dicheight valueForKey:[NSString stringWithFormat:@"%lu",(unsigned long)[indexPath row]]];
+    if ([strtemp isEqualToString:@"false"]) {
+        return NO;
+    }
+    return YES;
+}
+
+
+
+-(UIImage*)loadImage:(NSString*)pathResource
+{
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:pathResource ofType:@"png"];
+    NSData *image = [NSData dataWithContentsOfFile:filePath];
+    return [UIImage imageWithData:image];
 }
 
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -86,7 +99,6 @@
    
     UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(260, 158, 70, 20)];
     headerLabel.font = [UIFont italicSystemFontOfSize:15];
-//    headerLabel.backgroundColor=[UIColor whiteColor];
     headerLabel.textColor=[UIColor whiteColor];
     headerLabel.text=@"小黑";
     [headerView addSubview:headerLabel];
@@ -110,12 +122,25 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 250;
+    NSUInteger row = [indexPath row];
+    
+    FriendsInfoList *friendsinfolist=(FriendsInfoList*)[Friendsinfomap friendsInfo:[info objectAtIndex:row]];
+
+    if (friendsinfolist.imagecontent==nil) {
+        cellhight-=160;
+        [dicheight setValue:@"false" forKey:[NSString stringWithFormat:@"%lu",(unsigned long)row]];
+        return cellhight;
+    }
+    else
+    {
+        cellhight=250;
+        [dicheight setValue:@"true" forKey:[NSString stringWithFormat:@"%lu",(unsigned long)row]];
+    }
+        return cellhight;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

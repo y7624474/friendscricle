@@ -22,6 +22,8 @@
     rootView.title = @"Root View";
     
     self.navController = [[UINavigationController alloc] init];
+    [self.navController.navigationBar setTintColor:[UIColor blackColor]];
+    self.navController.navigationBar.barStyle=UIBarStyleBlack;
     [self.navController pushViewController:rootView animated:YES];
     [self.window addSubview:self.navController.view];
     [self.window makeKeyAndVisible];
