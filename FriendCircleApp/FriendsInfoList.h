@@ -15,4 +15,5 @@
 @property NSString* imagecontent;
 @property NSString* time;
 @property NSString* comments;
+@property NSString* headimage;
 @end

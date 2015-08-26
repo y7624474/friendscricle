@@ -12,7 +12,10 @@
 {
     Service *servce;
     NSMutableArray* info;
+    NSMutableArray* selfresouce;
     NSInteger cellhight;
+    LoadData *loaddata;
+    UIActivityIndicatorView *activityIndicator;
 }
 @end
 
@@ -21,9 +24,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     servce=[Service new];
+    loaddata=[LoadData new];
     info=[servce readJson:LOCAL];
+    selfresouce=[servce readJson:SELF];
     cellhight=250;
     [self initView];
+    UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera  target:self action:nil];
+    self.navigationItem.rightBarButtonItem = cameraButton;
 }
 
 -(void)initView{
@@ -34,7 +41,14 @@
     self.friendsTableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     
     [self.view addSubview:self.friendsTableView];
-    [[LoadData new] createTableFooter:self.friendsTableView];
+    [loaddata createTableFooter:self.friendsTableView];
+    
+    activityIndicator = [[UIActivityIndicatorView alloc]
+                        initWithActivityIndicatorStyle:
+                        UIActivityIndicatorViewStyleWhiteLarge];
+    activityIndicator.color = [UIColor redColor];
+    activityIndicator.frame =CGRectMake(15, 75, 40, 40);
+    [self.view addSubview:activityIndicator];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -82,22 +96,25 @@
 
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    SelfResouce *selfinfo=(SelfResouce*)[SelfResouceinfomap selfInfo:selfresouce];
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 200)];
     headerView.backgroundColor=[UIColor whiteColor];
-    UIImageView *headerImage =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"headimage.png"]];
+
+    UIImageView *headerImage =[[UIImageView alloc] initWithImage:[UIImage imageNamed:selfinfo.headimage]];
     headerImage.frame = CGRectMake(0, 0, tableView.bounds.size.width, 180);
     [headerView addSubview:headerImage];
     
 
-    UIImageView *icronImage =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"headicron.png"]];
+    UIImageView *icronImage =[[UIImageView alloc] initWithImage:[UIImage imageNamed:selfinfo.headicron]];
     icronImage.frame = CGRectMake(295, 160, 40, 40);
     [headerView addSubview:icronImage];
    
     UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(260, 158, 70, 20)];
     headerLabel.font = [UIFont italicSystemFontOfSize:15];
     headerLabel.textColor=[UIColor whiteColor];
-    headerLabel.text=@"小黑";
+    headerLabel.text=selfinfo.headname;
     [headerView addSubview:headerLabel];
+    
     return headerView;
 }
 
@@ -120,23 +137,24 @@
     NSUInteger row = [indexPath row];
     
     FriendsInfoList *friendsinfolist=(FriendsInfoList*)[Friendsinfomap friendsInfo:[info objectAtIndex:row]];
-    if (friendsinfolist.imagecontent==nil) {
-        cellhight=90;
-        NSLog(@"%lu,%ld",(unsigned long)row,(long)cellhight);
-        return cellhight;
-    }
-    else
-    {
-        cellhight=250;
-        NSLog(@"%lu,%ld",(unsigned long)row,(long)cellhight);
-    }
     
-   return cellhight;
+   return [[FriendsCell new] calculateHeight:[self heightCell:friendsinfolist]];
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    [[LoadData new] loadDataBegin:self.friendsTableView Data:info];
+    if (scrollView.contentOffset.y<= -60) {
+        [activityIndicator startAnimating];
+        [info removeAllObjects];
+        info=[servce readJson:LOCAL];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.friendsTableView reloadData];
+        });
+        [activityIndicator stopAnimating];
+        return;
+    }
+
+    [loaddata loadDataBegin:self.friendsTableView Data:info];
 }
 
 

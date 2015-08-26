@@ -12,6 +12,7 @@
 +(FriendsInfoList*) friendsInfo:(NSMutableArray *)friendsarray
 {
     FriendsInfoList* friendsinfolist=[FriendsInfoList new];
+    
     friendsinfolist.name=[friendsarray valueForKey:@"name"];
     friendsinfolist.icron=[friendsarray valueForKey:@"icron"];
     friendsinfolist.content=[friendsarray valueForKey:@"content"];

@@ -20,10 +20,16 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     ViewRootController *rootView = [[ViewRootController alloc] init];
     rootView.title = @"发现";
-    
+
+    UIColor * color = [UIColor whiteColor];
+    NSDictionary * dict = [NSDictionary dictionaryWithObject:color forKey:UITextAttributeTextColor];
+
     self.navController = [[UINavigationController alloc] init];
-    [self.navController.navigationBar setTintColor:[UIColor blackColor]];
-    self.navController.navigationBar.barStyle=UIBarStyleBlack;
+    [self.navController.navigationBar setTintColor:[UIColor whiteColor]];
+    [self.navController.navigationBar setTitleTextAttributes:dict];
+    [self.navController.navigationBar setBarTintColor:[UIColor blackColor]];
+
+//    self.navController.navigationBar.barStyle=UIBarStyleBlack;
     [self.navController pushViewController:rootView animated:YES];
     [self.window addSubview:self.navController.view];
     [self.window makeKeyAndVisible];

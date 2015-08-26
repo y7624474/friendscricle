@@ -19,5 +19,7 @@
 @property UILabel *nameLabel;
 @property UIView * separator;
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier boolImage:(BOOL) boolimage;
+@property NSInteger iheight;
+-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier boolImage:(BOOL) boolimage;
+-(NSInteger)calculateHeight:(BOOL) boolimage;
 @end

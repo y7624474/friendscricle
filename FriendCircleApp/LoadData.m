@@ -13,14 +13,14 @@
 - (void)loadDataBegin:(UITableView*) tableview Data:(NSMutableArray*) arraydata
 
 {
-    UIActivityIndicatorView *tableFooterActivityIndicator =[[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(75,10,20,20)];
+    UIActivityIndicatorView *tableFooterActivityIndicator=[[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(-20,10,40,40)];
     
-    [tableFooterActivityIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
-    
-    [tableFooterActivityIndicator startAnimating];
+    [tableFooterActivityIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhite];
     
     [tableview.tableFooterView addSubview:tableFooterActivityIndicator];
     
+    [tableFooterActivityIndicator startAnimating];
+
     [self loadDataing:tableview Data:arraydata];
     
 }
@@ -31,7 +31,7 @@
     [arraydata addObjectsFromArray:[[Service new] readJson:MORE]];
     [tableview reloadData];
     [self createTableFooter:tableview];
-    
+
 }
 
 

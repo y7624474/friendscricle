@@ -10,9 +10,10 @@
 #import "Service.h"
 #import "FriendsCell.h"
 #import "Friendsinfomap.h"
+#import "SelfResouceinfomap.h"
 #import "LoadData.h"
 #define LOCAL @"friendsinfo.json"
-
+#define SELF @"selfresource.json"
 @interface ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic) UITableView *friendsTableView;

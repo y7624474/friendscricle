@@ -11,6 +11,9 @@
 		49087F5D1B8AF42C009302F8 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 49087F5C1B8AF42C009302F8 /* Service.m */; };
 		49087F601B8AF5C5009302F8 /* FriendsInfoList.m in Sources */ = {isa = PBXBuildFile; fileRef = 49087F5F1B8AF5C5009302F8 /* FriendsInfoList.m */; };
 		49087F621B8AFAA9009302F8 /* friendsinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 49087F611B8AFAA9009302F8 /* friendsinfo.json */; };
+		492E2A8B1B8D9B3B00F16BAD /* selfresource.json in Resources */ = {isa = PBXBuildFile; fileRef = 492E2A8A1B8D9B3B00F16BAD /* selfresource.json */; };
+		492E2A8E1B8D9C0800F16BAD /* SelfResouce.m in Sources */ = {isa = PBXBuildFile; fileRef = 492E2A8D1B8D9C0800F16BAD /* SelfResouce.m */; };
+		492E2A911B8D9C7F00F16BAD /* SelfResouceinfomap.m in Sources */ = {isa = PBXBuildFile; fileRef = 492E2A901B8D9C7F00F16BAD /* SelfResouceinfomap.m */; };
 		495F6E481B86B92000B6C623 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 495F6E471B86B92000B6C623 /* main.m */; };
 		495F6E4B1B86B92000B6C623 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 495F6E4A1B86B92000B6C623 /* AppDelegate.m */; };
 		495F6E4E1B86B92000B6C623 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 495F6E4D1B86B92000B6C623 /* ViewController.m */; };
@@ -52,6 +55,11 @@
 		49087F5E1B8AF5C5009302F8 /* FriendsInfoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsInfoList.h; sourceTree = "<group>"; };
 		49087F5F1B8AF5C5009302F8 /* FriendsInfoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsInfoList.m; sourceTree = "<group>"; };
 		49087F611B8AFAA9009302F8 /* friendsinfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = friendsinfo.json; sourceTree = "<group>"; };
+		492E2A8A1B8D9B3B00F16BAD /* selfresource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = selfresource.json; sourceTree = "<group>"; };
+		492E2A8C1B8D9C0800F16BAD /* SelfResouce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfResouce.h; sourceTree = "<group>"; };
+		492E2A8D1B8D9C0800F16BAD /* SelfResouce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfResouce.m; sourceTree = "<group>"; };
+		492E2A8F1B8D9C7F00F16BAD /* SelfResouceinfomap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfResouceinfomap.h; sourceTree = "<group>"; };
+		492E2A901B8D9C7F00F16BAD /* SelfResouceinfomap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfResouceinfomap.m; sourceTree = "<group>"; };
 		495F6E421B86B92000B6C623 /* FriendCircleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendCircleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		495F6E461B86B92000B6C623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		495F6E471B86B92000B6C623 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -160,6 +168,7 @@
 				495F6E471B86B92000B6C623 /* main.m */,
 				49087F611B8AFAA9009302F8 /* friendsinfo.json */,
 				4973C5301B8C4CA5003B280A /* more.json */,
+				492E2A8A1B8D9B3B00F16BAD /* selfresource.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -190,6 +199,8 @@
 				49087F591B8AF413009302F8 /* ReadJsonfile.m */,
 				4973C5031B8B0090003B280A /* Friendsinfomap.h */,
 				4973C5041B8B0090003B280A /* Friendsinfomap.m */,
+				492E2A8F1B8D9C7F00F16BAD /* SelfResouceinfomap.h */,
+				492E2A901B8D9C7F00F16BAD /* SelfResouceinfomap.m */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -199,6 +210,8 @@
 			children = (
 				49087F5E1B8AF5C5009302F8 /* FriendsInfoList.h */,
 				49087F5F1B8AF5C5009302F8 /* FriendsInfoList.m */,
+				492E2A8C1B8D9C0800F16BAD /* SelfResouce.h */,
+				492E2A8D1B8D9C0800F16BAD /* SelfResouce.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -295,6 +308,7 @@
 				495F6E531B86B92000B6C623 /* Images.xcassets in Resources */,
 				4973C52A1B8C3587003B280A /* header.png in Resources */,
 				4973C5211B8C356D003B280A /* commentimage.png in Resources */,
+				492E2A8B1B8D9B3B00F16BAD /* selfresource.json in Resources */,
 				49087F621B8AFAA9009302F8 /* friendsinfo.json in Resources */,
 				4973C52D1B8C358B003B280A /* iCron.png in Resources */,
 			);
@@ -315,12 +329,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4973C5051B8B0090003B280A /* Friendsinfomap.m in Sources */,
+				492E2A911B8D9C7F00F16BAD /* SelfResouceinfomap.m in Sources */,
 				49087F601B8AF5C5009302F8 /* FriendsInfoList.m in Sources */,
 				4973C5401B8C5D54003B280A /* LoadData.m in Sources */,
 				4973C5141B8B18D4003B280A /* ViewRootController.m in Sources */,
 				495F6E4E1B86B92000B6C623 /* ViewController.m in Sources */,
 				495F6E4B1B86B92000B6C623 /* AppDelegate.m in Sources */,
 				495F6E481B86B92000B6C623 /* main.m in Sources */,
+				492E2A8E1B8D9C0800F16BAD /* SelfResouce.m in Sources */,
 				49DE377C1B89BAAF009A5719 /* FriendsCell.m in Sources */,
 				49087F5A1B8AF413009302F8 /* ReadJsonfile.m in Sources */,
 				49087F5D1B8AF42C009302F8 /* Service.m in Sources */,
