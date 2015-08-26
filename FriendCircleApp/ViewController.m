@@ -13,7 +13,6 @@
     Service *servce;
     NSMutableArray* info;
     NSInteger cellhight;
-    NSMutableDictionary* dicheight;
 }
 @end
 
@@ -23,19 +22,19 @@
     [super viewDidLoad];
     servce=[Service new];
     info=[servce readJson:LOCAL];
-    dicheight=[NSMutableDictionary dictionary];
     cellhight=250;
     [self initView];
 }
 
 -(void)initView{
-    CGRect frame=CGRectMake(0, -40, 380, 700);
+    CGRect frame=CGRectMake(0, -40, 380, 710);
     self.friendsTableView=[[UITableView alloc] initWithFrame:frame style:UITableViewStyleGrouped];
     self.friendsTableView.dataSource = self;
     self.friendsTableView.delegate = self;
     self.friendsTableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     
     [self.view addSubview:self.friendsTableView];
+    [[LoadData new] createTableFooter:self.friendsTableView];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -43,33 +42,30 @@
     static NSString *CellWithIdentifier = @"Cell";
     FriendsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellWithIdentifier];
     
-    if (cell == nil) {
-        cell = [[FriendsCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellWithIdentifier boolImage:[self heightCell:indexPath]];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
     NSUInteger row = [indexPath row];
-    
     FriendsInfoList *friendsinfolist=(FriendsInfoList*)[Friendsinfomap friendsInfo:[info objectAtIndex:row]];
 
+    if (cell == nil) {
+        cell = [[FriendsCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellWithIdentifier boolImage:[self heightCell:friendsinfolist]];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
 
     cell.icronImage.image=[self loadImage:friendsinfolist.icron];
     cell.nameLabel.text=friendsinfolist.name;
     cell.contentLabel.text=friendsinfolist.content;
-    if ([self heightCell:indexPath]) {
+    if ([self heightCell:friendsinfolist]) {
         cell.contentImage.image=[self loadImage:friendsinfolist.imagecontent];
     }
     cell.commentImage.image=[self loadImage:@"commentimage"];
     cell.timeLabel.text=friendsinfolist.time;
     cell.commentLabel.text=friendsinfolist.comments;
     
-    
     return cell;
 }
 
--(BOOL)heightCell:(NSIndexPath *)indexPath
+-(BOOL)heightCell:(FriendsInfoList*)friendsinfolist
 {
-    NSString* strtemp=[dicheight valueForKey:[NSString stringWithFormat:@"%lu",(unsigned long)[indexPath row]]];
-    if ([strtemp isEqualToString:@"false"]) {
+    if (friendsinfolist.imagecontent==nil) {
         return NO;
     }
     return YES;
@@ -112,7 +108,6 @@
 - (NSInteger) tableView: (UITableView *) tableView numberOfRowsInSection: (NSInteger) section {
     return [info count];
     
-    
 }
 
 
@@ -125,19 +120,25 @@
     NSUInteger row = [indexPath row];
     
     FriendsInfoList *friendsinfolist=(FriendsInfoList*)[Friendsinfomap friendsInfo:[info objectAtIndex:row]];
-
     if (friendsinfolist.imagecontent==nil) {
         cellhight-=160;
-        [dicheight setValue:@"false" forKey:[NSString stringWithFormat:@"%lu",(unsigned long)row]];
+        NSLog(@"%lu,%ld",(unsigned long)row,(long)cellhight);
         return cellhight;
     }
     else
     {
         cellhight=250;
-        [dicheight setValue:@"true" forKey:[NSString stringWithFormat:@"%lu",(unsigned long)row]];
+        NSLog(@"%lu,%ld",(unsigned long)row,(long)cellhight);
     }
-        return cellhight;
+    
+   return cellhight;
 }
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [[LoadData new] loadDataBegin:self.friendsTableView Data:info];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

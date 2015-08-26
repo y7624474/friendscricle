@@ -10,6 +10,7 @@
 #import "Service.h"
 #import "FriendsCell.h"
 #import "Friendsinfomap.h"
+#import "LoadData.h"
 #define LOCAL @"friendsinfo.json"
 
 @interface ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
