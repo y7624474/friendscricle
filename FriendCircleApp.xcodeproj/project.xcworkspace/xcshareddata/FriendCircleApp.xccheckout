@@ -7,7 +7,7 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>FF1A7036-11ED-43D5-BB36-2F98EC62C9C2</string>
 	<key>IDESourceControlProjectName</key>
-	<string>FriendCircleApp</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1437B2928F22D2023679CCE3DC2134051D91083C</key>
@@ -16,7 +16,7 @@
 		<string>github.com:y7624474/TableView.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>FriendCircleApp.xcodeproj</string>
+	<string>FriendCircleApp.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1437B2928F22D2023679CCE3DC2134051D91083C</key>

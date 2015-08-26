@@ -45,10 +45,10 @@
     NSUInteger row = [indexPath row];
     FriendsInfoList *friendsinfolist=(FriendsInfoList*)[Friendsinfomap friendsInfo:[info objectAtIndex:row]];
 
-    if (cell == nil) {
-        cell = [[FriendsCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellWithIdentifier boolImage:[self heightCell:friendsinfolist]];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
+  
+    cell = [[FriendsCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellWithIdentifier boolImage:[self heightCell:friendsinfolist]];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
 
     cell.icronImage.image=[self loadImage:friendsinfolist.icron];
     cell.nameLabel.text=friendsinfolist.name;
@@ -121,7 +121,7 @@
     
     FriendsInfoList *friendsinfolist=(FriendsInfoList*)[Friendsinfomap friendsInfo:[info objectAtIndex:row]];
     if (friendsinfolist.imagecontent==nil) {
-        cellhight-=160;
+        cellhight=90;
         NSLog(@"%lu,%ld",(unsigned long)row,(long)cellhight);
         return cellhight;
     }

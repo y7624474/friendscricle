@@ -19,7 +19,7 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     ViewRootController *rootView = [[ViewRootController alloc] init];
-    rootView.title = @"Root View";
+    rootView.title = @"发现";
     
     self.navController = [[UINavigationController alloc] init];
     [self.navController.navigationBar setTintColor:[UIColor blackColor]];
