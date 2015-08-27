@@ -18,11 +18,10 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        _iheight=0;
+        _iheight=8;
         // Initialization code
-        self.icronImage=[[UIImageView alloc]initWithFrame:CGRectMake(15, _iheight+8, WIDTH, HEIGHT)];
+        self.icronImage=[[UIImageView alloc]initWithFrame:CGRectMake(15, _iheight, WIDTH, HEIGHT)];
         self.icronImage.image=[self loadImage:friendsinfo.icron];
-        _iheight+=8;
         [self addSubview:self.icronImage];
         
         self.nameLabel=[[UILabel alloc]initWithFrame:CGRectMake(52, _iheight, WIDTH+10, HEIGHT-15)];
@@ -82,27 +81,28 @@
     return self;
 }
 
--(NSMutableArray*) describeDictionary:(NSMutableArray*) dict
+-(NSMutableArray*) describeDictionary:(NSMutableArray*) commentsarray
 {
-    NSDictionary* dickey;
-    NSUInteger i, count=0;
+    NSDictionary* commentsdic;
+    NSUInteger i, commentcount=0;
 
-    count = [dict count];
+    commentcount = [commentsarray count];
     NSMutableArray* result=[NSMutableArray arrayWithCapacity:2];
-    NSMutableString* str = [NSMutableString new];
-    for (i = 0; i < count; i++)
+    NSMutableString* strcomment = [NSMutableString new];
+    for (i = 0; i < commentcount; i++)
     {
-        dickey = [dict objectAtIndex: i];
-        NSArray* key=[dickey allKeys];
-        NSString* strkey=[key objectAtIndex:0];
-        [str appendFormat:@"%@:%@ ", strkey, [dickey valueForKey:strkey]];
+        commentsdic = [commentsarray objectAtIndex: i];
+        NSArray* keys=[commentsdic allKeys];
+        NSString* key=[keys objectAtIndex:0];
+        [strcomment appendFormat:@"%@:%@ ", key, [commentsdic valueForKey:key]];
 
-        if (i!=count-1) {
-            [str appendString:@"\n"];
+        if (i!=commentcount-1) {
+            [strcomment appendString:@"\n"];
         }
     }
-    [result addObject:str];
-    [result addObject:[NSString stringWithFormat:@"%lu",(unsigned long)count]];
+    [result addObject:strcomment];
+    [result addObject:[NSString stringWithFormat:@"%lu",(unsigned long)commentcount]];
+    
     return result;
 }
 
@@ -123,13 +123,11 @@
     //time
     _iheight+=20;
     
-
     //comments
     for (int i=0; i<[[self describeDictionary:[friendsinfo.comments mutableCopy]][1] intValue]; i++) {
         _iheight+=15;
     }
 
-    
     //separator
     _iheight+=10;
     

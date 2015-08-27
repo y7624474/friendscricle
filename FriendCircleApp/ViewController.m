@@ -5,7 +5,7 @@
 @interface ViewController ()
 {
     Service *servce;
-    NSMutableArray* info;
+    NSMutableArray* jsondata;
     NSMutableArray* selfresouce;
     NSInteger cellhight;
     LoadData *loaddata;
@@ -19,7 +19,7 @@
     [super viewDidLoad];
     servce=[Service new];
     loaddata=[LoadData new];
-    info=[servce readJson:LOCAL];
+    jsondata=[servce readJson:LOCAL];
     selfresouce=[servce readJson:SELF];
     [self initView];
     UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera  target:self action:nil];
@@ -50,7 +50,7 @@
     FriendsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellWithIdentifier];
     
     NSUInteger row = [indexPath row];
-    FriendsInfo *friendsinfo=(FriendsInfo*)[Friendsinfomap friendsInfo:[info objectAtIndex:row]];
+    FriendsInfo *friendsinfo=(FriendsInfo*)[Friendsinfomap friendsInfo:[jsondata objectAtIndex:row]];
   
     cell = [[FriendsCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellWithIdentifier FriendsInfo:friendsinfo];
     
@@ -87,7 +87,7 @@
 }
 
 - (NSInteger) tableView: (UITableView *) tableView numberOfRowsInSection: (NSInteger) section {
-    return [info count];
+    return [jsondata count];
     
 }
 
@@ -99,7 +99,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSUInteger row = [indexPath row];
     
-    FriendsInfo *friendsinfo=(FriendsInfo*)[Friendsinfomap friendsInfo:[info objectAtIndex:row]];
+    FriendsInfo *friendsinfo=(FriendsInfo*)[Friendsinfomap friendsInfo:[jsondata objectAtIndex:row]];
     
     return [[FriendsCell new] calculateHeight:friendsinfo];
 }
@@ -108,8 +108,8 @@
 {
     if (scrollView.contentOffset.y<= -60) {
         [activityIndicator startAnimating];
-        [info removeAllObjects];
-        info=[servce readJson:NEW];
+        [jsondata removeAllObjects];
+        jsondata=[servce readJson:NEW];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.friendsTableView reloadData];
         });
@@ -117,7 +117,7 @@
         return;
     }
     
-    [loaddata loadDataBegin:self.friendsTableView Data:info];
+    [loaddata loadDataBegin:self.friendsTableView Data:jsondata];
 }
 
 
