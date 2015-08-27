@@ -57,15 +57,6 @@
     return cell;
 }
 
--(BOOL)heightCell:(FriendsInfo*)friendsinfo
-{
-    if (friendsinfo.imagecontent==nil) {
-        return NO;
-    }
-    return YES;
-}
-
-
 
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
@@ -100,7 +91,6 @@
     
 }
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 200;
@@ -109,9 +99,9 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSUInteger row = [indexPath row];
     
-    FriendsInfo *friendsinfolist=(FriendsInfo*)[Friendsinfomap friendsInfo:[info objectAtIndex:row]];
+    FriendsInfo *friendsinfo=(FriendsInfo*)[Friendsinfomap friendsInfo:[info objectAtIndex:row]];
     
-    return [[FriendsCell new] calculateHeight:[self heightCell:friendsinfolist]];
+    return [[FriendsCell new] calculateHeight:friendsinfo];
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView

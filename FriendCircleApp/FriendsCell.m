@@ -73,7 +73,8 @@
     return self;
 }
 
--(NSInteger)calculateHeight:(BOOL) boolimage
+-(NSInteger)calculateHeight:(FriendsInfo*)friendsinfo;
+
 {
     _iheight=28;
     if(1)
@@ -82,7 +83,7 @@
         _iheight+=17;
     }
     
-    if (boolimage==YES) {
+    if (friendsinfo.imagecontent!=nil) {
         _iheight+=165;
     }
     

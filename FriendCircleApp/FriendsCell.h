@@ -24,5 +24,6 @@
 
 @property NSInteger iheight;
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier FriendsInfo:(FriendsInfo*)friendsinfo;
--(NSInteger)calculateHeight:(BOOL) boolimage;
+-(NSInteger)calculateHeight:(FriendsInfo*)friendsinfo;
+
 @end
