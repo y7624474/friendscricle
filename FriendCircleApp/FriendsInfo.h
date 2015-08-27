@@ -14,5 +14,5 @@
 @property NSString* content;
 @property NSString* imagecontent;
 @property NSString* time;
-@property NSString* comments;
+@property NSMutableDictionary* comments;
 @end

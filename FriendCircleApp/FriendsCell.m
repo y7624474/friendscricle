@@ -56,11 +56,20 @@
         _iheight+=20;
         [self addSubview:self.commentImage];
         
-        self.commentLabel = [[UILabel alloc]initWithFrame:CGRectMake(52, _iheight, WIDTH+260, HEIGHT-10)];
+        NSInteger commentlabelheight=5;
+        for (int i=0; i<[[self describeDictionary:[friendsinfo.comments mutableCopy]][1] intValue]; i++) {
+            commentlabelheight+=15;
+        }
+        
+        self.commentLabel = [[UILabel alloc]initWithFrame:CGRectMake(52, _iheight, WIDTH+260, commentlabelheight)];
         self.commentLabel.backgroundColor=[UIColor colorWithRed:220.0f/255.0f green:220.0f/255.0f blue:220.0f/255.0f alpha:0.5];
         self.commentLabel.font = [UIFont italicSystemFontOfSize:15];
-        self.commentLabel.text=friendsinfo.comments;
-        _iheight+=24;
+        self.commentLabel.numberOfLines=0;
+        self.commentLabel.text=[self describeDictionary:[friendsinfo.comments mutableCopy]][0];
+        for (int i=0; i<[[self describeDictionary:[friendsinfo.comments mutableCopy]][1] intValue]; i++) {
+            _iheight+=15;
+        }
+        _iheight+=9;
         [self addSubview:self.commentLabel];
 
         self.separator = [[UIView alloc] initWithFrame:CGRectMake(0, _iheight, 380, 1)];
@@ -71,6 +80,30 @@
        
     }
     return self;
+}
+
+-(NSMutableArray*) describeDictionary:(NSMutableArray*) dict
+{
+    NSDictionary* dickey;
+    NSUInteger i, count=0;
+
+    count = [dict count];
+    NSMutableArray* result=[NSMutableArray arrayWithCapacity:2];
+    NSMutableString* str = [NSMutableString new];
+    for (i = 0; i < count; i++)
+    {
+        dickey = [dict objectAtIndex: i];
+        NSArray* key=[dickey allKeys];
+        NSString* strkey=[key objectAtIndex:0];
+        [str appendFormat:@"%@:%@ ", strkey, [dickey valueForKey:strkey]];
+
+        if (i!=count-1) {
+            [str appendString:@"\n"];
+        }
+    }
+    [result addObject:str];
+    [result addObject:[NSString stringWithFormat:@"%lu",(unsigned long)count]];
+    return result;
 }
 
 -(NSInteger)calculateHeight:(FriendsInfo*)friendsinfo;
@@ -87,16 +120,17 @@
         _iheight+=165;
     }
     
-    if (1) {
-        //timelabel
-         _iheight+=20;
-    }
+    //time
+    _iheight+=20;
+    
 
-    if (1) {
-        //comment
+    //comments
+    for (int i=0; i<[[self describeDictionary:[friendsinfo.comments mutableCopy]][1] intValue]; i++) {
         _iheight+=15;
     }
+
     
+    //separator
     _iheight+=10;
     
     return _iheight;
@@ -111,8 +145,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end

@@ -11,14 +11,14 @@
 @implementation Friendsinfomap
 +(FriendsInfo*) friendsInfo:(NSMutableArray *)friendsarray
 {
-    FriendsInfo* friendsinfolist=[FriendsInfo new];
+    FriendsInfo* friendsinfo=[FriendsInfo new];
     
-    friendsinfolist.name=[friendsarray valueForKey:@"name"];
-    friendsinfolist.icron=[friendsarray valueForKey:@"icron"];
-    friendsinfolist.content=[friendsarray valueForKey:@"content"];
-    friendsinfolist.time=[friendsarray valueForKey:@"time"];
-    friendsinfolist.imagecontent=[friendsarray valueForKey:@"imagecontent"];
-    friendsinfolist.comments=[friendsarray valueForKey:@"comments"];
-    return friendsinfolist;
+    friendsinfo.name=[friendsarray valueForKey:@"name"];
+    friendsinfo.icron=[friendsarray valueForKey:@"icron"];
+    friendsinfo.content=[friendsarray valueForKey:@"content"];
+    friendsinfo.time=[friendsarray valueForKey:@"time"];
+    friendsinfo.imagecontent=[friendsarray valueForKey:@"imagecontent"];
+    friendsinfo.comments=[friendsarray valueForKey:@"comments"];
+    return friendsinfo;
 }
 @end
