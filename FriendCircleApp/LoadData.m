@@ -13,7 +13,7 @@
 - (void)loadDataBegin:(UITableView*) tableview Data:(NSMutableArray*) arraydata
 
 {
-    UIActivityIndicatorView *tableFooterActivityIndicator=[[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(-20,10,40,40)];
+    UIActivityIndicatorView *tableFooterActivityIndicator=[[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(100,-5,40,40)];
     
     [tableFooterActivityIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhite];
     

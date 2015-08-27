@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FriendsInfo.h"
+#define WIDTH 30
+#define HEIGHT 30
 
 @interface FriendsCell : UITableViewCell
 @property UILabel *timeLabel;
@@ -20,6 +23,6 @@
 @property UIView * separator;
 
 @property NSInteger iheight;
--(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier boolImage:(BOOL) boolimage;
+-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier FriendsInfo:(FriendsInfo*)friendsinfo;
 -(NSInteger)calculateHeight:(BOOL) boolimage;
 @end

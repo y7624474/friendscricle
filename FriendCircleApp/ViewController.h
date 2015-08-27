@@ -13,6 +13,7 @@
 #import "SelfResouceinfomap.h"
 #import "LoadData.h"
 #define LOCAL @"friendsinfo.json"
+#define NEW @"newinfo.json"
 #define SELF @"selfresource.json"
 @interface ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 

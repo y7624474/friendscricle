@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 TWer . All rights reserved.
 //
 
-#import "FriendsInfoList.h"
+#import "FriendsInfo.h"
 
-@implementation FriendsInfoList
+@implementation FriendsInfo
 
 @end

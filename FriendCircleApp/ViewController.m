@@ -1,10 +1,4 @@
-//
-//  ViewController.m
-//  FriendCircleApp
-//
-//  Created by TWer  on 8/21/15.
-//  Copyright (c) 2015 TWer . All rights reserved.
-//
+
 
 #import "ViewController.h"
 
@@ -27,7 +21,6 @@
     loaddata=[LoadData new];
     info=[servce readJson:LOCAL];
     selfresouce=[servce readJson:SELF];
-    cellhight=250;
     [self initView];
     UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera  target:self action:nil];
     self.navigationItem.rightBarButtonItem = cameraButton;
@@ -57,42 +50,22 @@
     FriendsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellWithIdentifier];
     
     NSUInteger row = [indexPath row];
-    FriendsInfoList *friendsinfolist=(FriendsInfoList*)[Friendsinfomap friendsInfo:[info objectAtIndex:row]];
-
+    FriendsInfo *friendsinfo=(FriendsInfo*)[Friendsinfomap friendsInfo:[info objectAtIndex:row]];
   
-    cell = [[FriendsCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellWithIdentifier boolImage:[self heightCell:friendsinfolist]];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-
-    cell.icronImage.image=[self loadImage:friendsinfolist.icron];
-    cell.nameLabel.text=friendsinfolist.name;
-    cell.contentLabel.text=friendsinfolist.content;
-    if ([self heightCell:friendsinfolist]) {
-        cell.contentImage.image=[self loadImage:friendsinfolist.imagecontent];
-    }
-    cell.commentImage.image=[self loadImage:@"commentimage"];
-    cell.timeLabel.text=friendsinfolist.time;
-    cell.commentLabel.text=friendsinfolist.comments;
+    cell = [[FriendsCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellWithIdentifier FriendsInfo:friendsinfo];
     
     return cell;
 }
 
--(BOOL)heightCell:(FriendsInfoList*)friendsinfolist
+-(BOOL)heightCell:(FriendsInfo*)friendsinfo
 {
-    if (friendsinfolist.imagecontent==nil) {
+    if (friendsinfo.imagecontent==nil) {
         return NO;
     }
     return YES;
 }
 
 
-
--(UIImage*)loadImage:(NSString*)pathResource
-{
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:pathResource ofType:@"png"];
-    NSData *image = [NSData dataWithContentsOfFile:filePath];
-    return [UIImage imageWithData:image];
-}
 
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
@@ -136,9 +109,9 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSUInteger row = [indexPath row];
     
-    FriendsInfoList *friendsinfolist=(FriendsInfoList*)[Friendsinfomap friendsInfo:[info objectAtIndex:row]];
+    FriendsInfo *friendsinfolist=(FriendsInfo*)[Friendsinfomap friendsInfo:[info objectAtIndex:row]];
     
-   return [[FriendsCell new] calculateHeight:[self heightCell:friendsinfolist]];
+    return [[FriendsCell new] calculateHeight:[self heightCell:friendsinfolist]];
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
@@ -146,14 +119,14 @@
     if (scrollView.contentOffset.y<= -60) {
         [activityIndicator startAnimating];
         [info removeAllObjects];
-        info=[servce readJson:LOCAL];
+        info=[servce readJson:NEW];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.friendsTableView reloadData];
         });
         [activityIndicator stopAnimating];
         return;
     }
-
+    
     [loaddata loadDataBegin:self.friendsTableView Data:info];
 }
 

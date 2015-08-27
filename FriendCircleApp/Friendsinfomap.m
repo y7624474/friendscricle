@@ -9,9 +9,9 @@
 #import "Friendsinfomap.h"
 
 @implementation Friendsinfomap
-+(FriendsInfoList*) friendsInfo:(NSMutableArray *)friendsarray
++(FriendsInfo*) friendsInfo:(NSMutableArray *)friendsarray
 {
-    FriendsInfoList* friendsinfolist=[FriendsInfoList new];
+    FriendsInfo* friendsinfolist=[FriendsInfo new];
     
     friendsinfolist.name=[friendsarray valueForKey:@"name"];
     friendsinfolist.icron=[friendsarray valueForKey:@"icron"];

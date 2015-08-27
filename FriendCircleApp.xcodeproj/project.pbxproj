@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		49087F5A1B8AF413009302F8 /* ReadJsonfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 49087F591B8AF413009302F8 /* ReadJsonfile.m */; };
 		49087F5D1B8AF42C009302F8 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 49087F5C1B8AF42C009302F8 /* Service.m */; };
-		49087F601B8AF5C5009302F8 /* FriendsInfoList.m in Sources */ = {isa = PBXBuildFile; fileRef = 49087F5F1B8AF5C5009302F8 /* FriendsInfoList.m */; };
+		49087F601B8AF5C5009302F8 /* FriendsInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49087F5F1B8AF5C5009302F8 /* FriendsInfo.m */; };
 		49087F621B8AFAA9009302F8 /* friendsinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 49087F611B8AFAA9009302F8 /* friendsinfo.json */; };
 		492E2A8B1B8D9B3B00F16BAD /* selfresource.json in Resources */ = {isa = PBXBuildFile; fileRef = 492E2A8A1B8D9B3B00F16BAD /* selfresource.json */; };
 		492E2A8E1B8D9C0800F16BAD /* SelfResouce.m in Sources */ = {isa = PBXBuildFile; fileRef = 492E2A8D1B8D9C0800F16BAD /* SelfResouce.m */; };
@@ -34,6 +34,7 @@
 		4973C52D1B8C358B003B280A /* iCron.png in Resources */ = {isa = PBXBuildFile; fileRef = 4973C52F1B8C358B003B280A /* iCron.png */; };
 		4973C5311B8C4CA5003B280A /* more.json in Resources */ = {isa = PBXBuildFile; fileRef = 4973C5301B8C4CA5003B280A /* more.json */; };
 		4973C5401B8C5D54003B280A /* LoadData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4973C53F1B8C5D54003B280A /* LoadData.m */; };
+		498EF3A91B8EA0F9009170B4 /* newinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 498EF3A81B8EA0F9009170B4 /* newinfo.json */; };
 		49DE377C1B89BAAF009A5719 /* FriendsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DE377B1B89BAAF009A5719 /* FriendsCell.m */; };
 /* End PBXBuildFile section */
 
@@ -52,8 +53,8 @@
 		49087F591B8AF413009302F8 /* ReadJsonfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReadJsonfile.m; path = ../../IOStest/TestTableView/TestTableView/ReadJsonfile.m; sourceTree = "<group>"; };
 		49087F5B1B8AF42C009302F8 /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Service.h; path = ../../IOStest/TestTableView/Service.h; sourceTree = "<group>"; };
 		49087F5C1B8AF42C009302F8 /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Service.m; path = ../../IOStest/TestTableView/Service.m; sourceTree = "<group>"; };
-		49087F5E1B8AF5C5009302F8 /* FriendsInfoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsInfoList.h; sourceTree = "<group>"; };
-		49087F5F1B8AF5C5009302F8 /* FriendsInfoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsInfoList.m; sourceTree = "<group>"; };
+		49087F5E1B8AF5C5009302F8 /* FriendsInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsInfo.h; sourceTree = "<group>"; };
+		49087F5F1B8AF5C5009302F8 /* FriendsInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsInfo.m; sourceTree = "<group>"; };
 		49087F611B8AFAA9009302F8 /* friendsinfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = friendsinfo.json; sourceTree = "<group>"; };
 		492E2A8A1B8D9B3B00F16BAD /* selfresource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = selfresource.json; sourceTree = "<group>"; };
 		492E2A8C1B8D9C0800F16BAD /* SelfResouce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfResouce.h; sourceTree = "<group>"; };
@@ -89,6 +90,7 @@
 		4973C5301B8C4CA5003B280A /* more.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = more.json; sourceTree = "<group>"; };
 		4973C53E1B8C5D54003B280A /* LoadData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadData.h; sourceTree = "<group>"; };
 		4973C53F1B8C5D54003B280A /* LoadData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadData.m; sourceTree = "<group>"; };
+		498EF3A81B8EA0F9009170B4 /* newinfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newinfo.json; sourceTree = "<group>"; };
 		49DE377A1B89BAAF009A5719 /* FriendsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsCell.h; sourceTree = "<group>"; };
 		49DE377B1B89BAAF009A5719 /* FriendsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,20 +157,10 @@
 		495F6E451B86B92000B6C623 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4973C5171B8C3522003B280A /* headimage.png */,
-				4973C51A1B8C3530003B280A /* icron1.png */,
-				4973C51D1B8C3565003B280A /* contentimage1.png */,
-				4973C5201B8C3569003B280A /* contentimage2.png */,
-				4973C5231B8C356D003B280A /* commentimage.png */,
-				4973C5261B8C3575003B280A /* contentimage.png */,
-				4973C5291B8C3580003B280A /* headicron.png */,
-				4973C52C1B8C3587003B280A /* header.png */,
-				4973C52F1B8C358B003B280A /* iCron.png */,
+				498EF3A71B8EA0D6009170B4 /* jsonfile */,
+				498EF3A61B8EA0B3009170B4 /* Image */,
 				495F6E461B86B92000B6C623 /* Info.plist */,
 				495F6E471B86B92000B6C623 /* main.m */,
-				49087F611B8AFAA9009302F8 /* friendsinfo.json */,
-				4973C5301B8C4CA5003B280A /* more.json */,
-				492E2A8A1B8D9B3B00F16BAD /* selfresource.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -190,6 +182,33 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		498EF3A61B8EA0B3009170B4 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				4973C5171B8C3522003B280A /* headimage.png */,
+				4973C51A1B8C3530003B280A /* icron1.png */,
+				4973C51D1B8C3565003B280A /* contentimage1.png */,
+				4973C5201B8C3569003B280A /* contentimage2.png */,
+				4973C5231B8C356D003B280A /* commentimage.png */,
+				4973C5261B8C3575003B280A /* contentimage.png */,
+				4973C5291B8C3580003B280A /* headicron.png */,
+				4973C52C1B8C3587003B280A /* header.png */,
+				4973C52F1B8C358B003B280A /* iCron.png */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		498EF3A71B8EA0D6009170B4 /* jsonfile */ = {
+			isa = PBXGroup;
+			children = (
+				49087F611B8AFAA9009302F8 /* friendsinfo.json */,
+				4973C5301B8C4CA5003B280A /* more.json */,
+				492E2A8A1B8D9B3B00F16BAD /* selfresource.json */,
+				498EF3A81B8EA0F9009170B4 /* newinfo.json */,
+			);
+			name = jsonfile;
+			sourceTree = "<group>";
+		};
 		49DE37781B89BA3B009A5719 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,8 +227,8 @@
 		49DE37791B89BA47009A5719 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				49087F5E1B8AF5C5009302F8 /* FriendsInfoList.h */,
-				49087F5F1B8AF5C5009302F8 /* FriendsInfoList.m */,
+				49087F5E1B8AF5C5009302F8 /* FriendsInfo.h */,
+				49087F5F1B8AF5C5009302F8 /* FriendsInfo.m */,
 				492E2A8C1B8D9C0800F16BAD /* SelfResouce.h */,
 				492E2A8D1B8D9C0800F16BAD /* SelfResouce.m */,
 			);
@@ -306,6 +325,7 @@
 				4973C5271B8C3580003B280A /* headicron.png in Resources */,
 				495F6E561B86B92000B6C623 /* LaunchScreen.xib in Resources */,
 				495F6E531B86B92000B6C623 /* Images.xcassets in Resources */,
+				498EF3A91B8EA0F9009170B4 /* newinfo.json in Resources */,
 				4973C52A1B8C3587003B280A /* header.png in Resources */,
 				4973C5211B8C356D003B280A /* commentimage.png in Resources */,
 				492E2A8B1B8D9B3B00F16BAD /* selfresource.json in Resources */,
@@ -330,7 +350,7 @@
 			files = (
 				4973C5051B8B0090003B280A /* Friendsinfomap.m in Sources */,
 				492E2A911B8D9C7F00F16BAD /* SelfResouceinfomap.m in Sources */,
-				49087F601B8AF5C5009302F8 /* FriendsInfoList.m in Sources */,
+				49087F601B8AF5C5009302F8 /* FriendsInfo.m in Sources */,
 				4973C5401B8C5D54003B280A /* LoadData.m in Sources */,
 				4973C5141B8B18D4003B280A /* ViewRootController.m in Sources */,
 				495F6E4E1B86B92000B6C623 /* ViewController.m in Sources */,

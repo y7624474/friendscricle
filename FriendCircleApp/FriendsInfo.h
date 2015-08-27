@@ -8,12 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FriendsInfoList : NSObject
+@interface FriendsInfo : NSObject
 @property NSString* name;
 @property NSString* icron;
 @property NSString* content;
 @property NSString* imagecontent;
 @property NSString* time;
 @property NSString* comments;
-@property NSString* headimage;
 @end

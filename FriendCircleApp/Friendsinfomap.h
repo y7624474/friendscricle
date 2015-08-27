@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FriendsInfoList.h"
+#import "FriendsInfo.h"
 @interface Friendsinfomap : NSObject
-+(FriendsInfoList*) friendsInfo:(NSMutableArray*) friendsarray;
++(FriendsInfo*) friendsInfo:(NSMutableArray*) friendsarray;
 @end
