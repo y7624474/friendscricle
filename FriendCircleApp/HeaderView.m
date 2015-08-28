@@ -13,7 +13,7 @@
 -(id)init:(UITableView *)tableView
 {
     if (self==[super init]) {
-        service=[Service new];
+        service=[ReadFileService new];
         selfresouce=[service readJson:SELF];
         
         SelfResouce *selfinfo=(SelfResouce*)[SelfResouceinfomap selfInfo:selfresouce];
@@ -30,7 +30,7 @@
         [self addSubview:icronImage];
         
         UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(260, 158, 70, 20)];
-        headerLabel.font = [UIFont italicSystemFontOfSize:15];
+        headerLabel.font = [UIFont italicSystemFontOfSize:FONTSIZELARGE];
         headerLabel.textColor=[UIColor whiteColor];
         headerLabel.text=selfinfo.headname;
         [self addSubview:headerLabel];

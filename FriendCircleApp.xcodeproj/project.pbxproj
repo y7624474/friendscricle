@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49087F5A1B8AF413009302F8 /* ReadJsonfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 49087F591B8AF413009302F8 /* ReadJsonfile.m */; };
-		49087F5D1B8AF42C009302F8 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 49087F5C1B8AF42C009302F8 /* Service.m */; };
+		49087F5D1B8AF42C009302F8 /* ReadFileService.m in Sources */ = {isa = PBXBuildFile; fileRef = 49087F5C1B8AF42C009302F8 /* ReadFileService.m */; };
 		49087F601B8AF5C5009302F8 /* FriendsInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49087F5F1B8AF5C5009302F8 /* FriendsInfo.m */; };
 		49087F621B8AFAA9009302F8 /* friendsinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 49087F611B8AFAA9009302F8 /* friendsinfo.json */; };
 		492E2A8B1B8D9B3B00F16BAD /* selfresource.json in Resources */ = {isa = PBXBuildFile; fileRef = 492E2A8A1B8D9B3B00F16BAD /* selfresource.json */; };
@@ -52,8 +52,8 @@
 /* Begin PBXFileReference section */
 		49087F581B8AF413009302F8 /* ReadJsonfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReadJsonfile.h; path = ../../IOStest/TestTableView/TestTableView/ReadJsonfile.h; sourceTree = "<group>"; };
 		49087F591B8AF413009302F8 /* ReadJsonfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReadJsonfile.m; path = ../../IOStest/TestTableView/TestTableView/ReadJsonfile.m; sourceTree = "<group>"; };
-		49087F5B1B8AF42C009302F8 /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Service.h; path = ../../IOStest/TestTableView/Service.h; sourceTree = "<group>"; };
-		49087F5C1B8AF42C009302F8 /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Service.m; path = ../../IOStest/TestTableView/Service.m; sourceTree = "<group>"; };
+		49087F5B1B8AF42C009302F8 /* ReadFileService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReadFileService.h; path = ../../IOStest/TestTableView/ReadFileService.h; sourceTree = "<group>"; };
+		49087F5C1B8AF42C009302F8 /* ReadFileService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReadFileService.m; path = ../../IOStest/TestTableView/ReadFileService.m; sourceTree = "<group>"; };
 		49087F5E1B8AF5C5009302F8 /* FriendsInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsInfo.h; sourceTree = "<group>"; };
 		49087F5F1B8AF5C5009302F8 /* FriendsInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsInfo.m; sourceTree = "<group>"; };
 		49087F611B8AFAA9009302F8 /* friendsinfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = friendsinfo.json; sourceTree = "<group>"; };
@@ -225,8 +225,8 @@
 		49DE37781B89BA3B009A5719 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				49087F5B1B8AF42C009302F8 /* Service.h */,
-				49087F5C1B8AF42C009302F8 /* Service.m */,
+				49087F5B1B8AF42C009302F8 /* ReadFileService.h */,
+				49087F5C1B8AF42C009302F8 /* ReadFileService.m */,
 				49087F581B8AF413009302F8 /* ReadJsonfile.h */,
 				49087F591B8AF413009302F8 /* ReadJsonfile.m */,
 				4973C5031B8B0090003B280A /* Friendsinfomap.h */,
@@ -373,7 +373,7 @@
 				492E2A8E1B8D9C0800F16BAD /* SelfResouce.m in Sources */,
 				49DE377C1B89BAAF009A5719 /* FriendsCell.m in Sources */,
 				49087F5A1B8AF413009302F8 /* ReadJsonfile.m in Sources */,
-				49087F5D1B8AF42C009302F8 /* Service.m in Sources */,
+				49087F5D1B8AF42C009302F8 /* ReadFileService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

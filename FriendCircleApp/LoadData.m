@@ -28,7 +28,7 @@
 -(void)loadDataing:(UITableView*) tableview Data:(NSMutableArray*) arraydata
 
 {
-    [arraydata addObjectsFromArray:[[Service new] readJson:MORE]];
+    [arraydata addObjectsFromArray:[[ReadFileService new] readJson:MORE]];
     [tableview reloadData];
     [self createTableFooter:tableview];
 
@@ -41,7 +41,7 @@
     
     UILabel *loadMoreText = [[UILabel alloc] initWithFrame:CGRectMake(0,0,120,20)];
     [loadMoreText setCenter:tableFooterView.center];
-    [loadMoreText setFont:[UIFont fontWithName:@"Helvetica Neue" size:14]];
+    [loadMoreText setFont:[UIFont fontWithName:@"Helvetica Neue" size:FONTSIZESMALL]];
     [loadMoreText setText:@"正在加载..."];
     
     [tableFooterView addSubview:loadMoreText];

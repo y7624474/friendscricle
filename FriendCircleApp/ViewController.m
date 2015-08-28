@@ -4,7 +4,7 @@
 
 @interface ViewController ()
 {
-    Service *servce;
+    ReadFileService *servce;
     NSMutableArray* jsondata;
     NSMutableArray* selfresouce;
     NSInteger cellhight;
@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    servce=[Service new];
+    servce=[ReadFileService new];
     loaddata=[LoadData new];
     jsondata=[servce readJson:LOCAL];
     selfresouce=[servce readJson:SELF];

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Service.h"
+#import "ReadFileService.h"
 #define MORE @"more.json"
+#define FONTSIZESMALL 14
 @interface LoadData : UIViewController
 - (void)loadDataBegin:(UITableView*) tableview Data:(NSMutableArray*) arraydata;
 -(void)createTableFooter:(UITableView*) tableview;

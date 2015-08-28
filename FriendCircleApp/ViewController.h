@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Service.h"
+#import "ReadFileService.h"
 #import "FriendsCell.h"
 #import "Friendsinfomap.h"
 #import "LoadData.h"
 #import "HeaderView.h"
 #define LOCAL @"friendsinfo.json"
 #define NEW @"newinfo.json"
+
 @interface ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic) UITableView *friendsTableView;

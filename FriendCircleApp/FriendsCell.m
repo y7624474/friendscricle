@@ -27,17 +27,17 @@
         [self addSubview:self.icronImage];
         
         self.nameLabel=[[UILabel alloc]initWithFrame:CGRectMake(52, _iheight, WIDTH+10, HEIGHT-15)];
-        self.nameLabel.font = [UIFont italicSystemFontOfSize:15];
+        self.nameLabel.font = [UIFont italicSystemFontOfSize:FONTSIZELARGE];
         self.nameLabel.textColor=[UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:139.0f/255.0f alpha:0.5];
         self.nameLabel.text=friendsinfo.name;
         _iheight+=20;
         [self addSubview:self.nameLabel];
         
         
-        NSUInteger contentheight=(([friendsinfo.content length])*14)/160;
+        NSUInteger contentheight=(([friendsinfo.content length])*FONTSIZESMALL)/160;
         
-        self.contentLabel=[[UILabel alloc]initWithFrame:CGRectMake(52, _iheight, WIDTH+260, 14+10*contentheight)];
-        self.contentLabel.font = [UIFont italicSystemFontOfSize:14];
+        self.contentLabel=[[UILabel alloc]initWithFrame:CGRectMake(52, _iheight, WIDTH+260, FONTSIZESMALL+10*contentheight)];
+        self.contentLabel.font = [UIFont italicSystemFontOfSize:FONTSIZESMALL];
         self.contentLabel.numberOfLines=0;
         self.contentLabel.text=friendsinfo.content;
         _iheight+=10*contentheight;
@@ -72,7 +72,7 @@
         
         self.commentLabel = [[UILabel alloc]initWithFrame:CGRectMake(52, _iheight, WIDTH+260, commentlabelheight)];
         self.commentLabel.backgroundColor=[UIColor colorWithRed:220.0f/255.0f green:220.0f/255.0f blue:220.0f/255.0f alpha:0.5];
-        self.commentLabel.font = [UIFont italicSystemFontOfSize:14];
+        self.commentLabel.font = [UIFont italicSystemFontOfSize:FONTSIZESMALL];
         self.commentLabel.numberOfLines=0;
         self.commentLabel.text=[self describeDictionary:[friendsinfo.comments mutableCopy]][0];
         for (int i=0; i<=[[self describeDictionary:[friendsinfo.comments mutableCopy]][1] intValue]; i++) {
@@ -114,7 +114,7 @@
     [self.goodbtn setTitle:@"赞" forState:UIControlStateNormal];
     self.goodbtn.frame=CGRectMake(p.x-70, p.y-10, WIDTH+25, HEIGHT-10);
     self.goodbtn.tag=100;
-    self.goodbtn.titleLabel.font = [UIFont italicSystemFontOfSize:14];
+    self.goodbtn.titleLabel.font = [UIFont italicSystemFontOfSize:FONTSIZESMALL];
     [self.goodbtn setTintColor:[UIColor whiteColor]];
     [self.tableview addSubview:self.goodbtn];
     
@@ -150,13 +150,12 @@
 
 {
     _iheight=28;
-    if(1)
-    {
-        //contentLabel;
-        NSUInteger contentheight=(([friendsinfo.content length])*14)/160;
-        _iheight+=10*contentheight;
-        _iheight+=15;
-    }
+    
+    //contentLabel;
+    NSUInteger contentheight=(([friendsinfo.content length])*FONTSIZESMALL)/160;
+    _iheight+=10*contentheight;
+    _iheight+=15;
+    
     
     if (friendsinfo.imagecontent!=nil) {
         _iheight+=165;
