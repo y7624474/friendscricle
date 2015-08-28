@@ -46,39 +46,33 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellWithIdentifier = @"Cell";
-    FriendsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellWithIdentifier];
-    
+    FriendsCell *cell;
     NSUInteger row = [indexPath row];
     FriendsInfo *friendsinfo=(FriendsInfo*)[Friendsinfomap friendsInfo:[jsondata objectAtIndex:row]];
   
-    cell = [[FriendsCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellWithIdentifier FriendsInfo:friendsinfo];
+    cell = [[FriendsCell alloc]initWithStyle:UITableViewCellStyleSubtitle FriendsInfo:friendsinfo Tableview:self.friendsTableView];
     
     return cell;
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView;
+{
+    for(UIView *view in self.friendsTableView.subviews)
+    {
+        
+        if([view isKindOfClass:[UIButton class]]&&(100 == view.tag))
+        {
+            [view removeFromSuperview];
+        }
+    }
+    
+}
+
+
 
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    SelfResouce *selfinfo=(SelfResouce*)[SelfResouceinfomap selfInfo:selfresouce];
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 200)];
-    headerView.backgroundColor=[UIColor whiteColor];
-
-    UIImageView *headerImage =[[UIImageView alloc] initWithImage:[UIImage imageNamed:selfinfo.headimage]];
-    headerImage.frame = CGRectMake(0, 0, tableView.bounds.size.width, 180);
-    [headerView addSubview:headerImage];
-    
-
-    UIImageView *icronImage =[[UIImageView alloc] initWithImage:[UIImage imageNamed:selfinfo.headicron]];
-    icronImage.frame = CGRectMake(295, 160, 40, 40);
-    [headerView addSubview:icronImage];
-   
-    UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(260, 158, 70, 20)];
-    headerLabel.font = [UIFont italicSystemFontOfSize:15];
-    headerLabel.textColor=[UIColor whiteColor];
-    headerLabel.text=selfinfo.headname;
-    [headerView addSubview:headerLabel];
-    
+    UIView *headerView=[[HeaderView alloc] init:tableView];
     return headerView;
 }
 

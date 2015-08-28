@@ -18,12 +18,16 @@
 @property UILabel *contentLabel;
 @property UIImageView *icronImage;
 @property UIImageView *contentImage;
-@property UIImageView *commentImage;
+@property UIButton *commentImagebtn;
 @property UILabel *nameLabel;
 @property UIView * separator;
 
+@property UIButton *goodbtn;
+
 @property NSInteger iheight;
--(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier FriendsInfo:(FriendsInfo*)friendsinfo;
+
+@property UITableView* tableview;
+-(id)initWithStyle:(UITableViewCellStyle)style  FriendsInfo:(FriendsInfo*)friendsinfo Tableview:(UITableView*) friendsTableView;
 -(NSInteger)calculateHeight:(FriendsInfo*)friendsinfo;
 
 @end

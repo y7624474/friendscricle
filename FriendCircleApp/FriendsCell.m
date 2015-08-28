@@ -14,9 +14,11 @@
     // Initialization code
 }
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier FriendsInfo:(FriendsInfo*)friendsinfo
+- (id)initWithStyle:(UITableViewCellStyle)style  FriendsInfo:(FriendsInfo*)friendsinfo Tableview:(UITableView*) friendstableView
+
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    self.tableview=friendstableView;
+    self = [super initWithStyle:style reuseIdentifier:nil];
     if (self) {
         _iheight=8;
         // Initialization code
@@ -31,10 +33,15 @@
         _iheight+=20;
         [self addSubview:self.nameLabel];
         
-        self.contentLabel=[[UILabel alloc]initWithFrame:CGRectMake(52, _iheight, WIDTH+130, HEIGHT-15)];
-        self.contentLabel.font = [UIFont italicSystemFontOfSize:15];
+        
+        NSUInteger contentheight=(([friendsinfo.content length])*14)/160;
+        
+        self.contentLabel=[[UILabel alloc]initWithFrame:CGRectMake(52, _iheight, WIDTH+260, 14+10*contentheight)];
+        self.contentLabel.font = [UIFont italicSystemFontOfSize:14];
+        self.contentLabel.numberOfLines=0;
         self.contentLabel.text=friendsinfo.content;
-        _iheight+=17;
+        _iheight+=10*contentheight;
+        _iheight+=15;
         [self addSubview:self.contentLabel];
         
         if (friendsinfo.imagecontent!=nil) {
@@ -50,22 +57,25 @@
         self.timeLabel.text=friendsinfo.time;
         [self addSubview:self.timeLabel];
         
-        self.commentImage=[[UIImageView alloc]initWithFrame:CGRectMake(325, _iheight, WIDTH-10, HEIGHT-18)];
-        self.commentImage.image=[self loadImage:@"commentimage"];
+
+        self.commentImagebtn=[[UIButton alloc]initWithFrame:CGRectMake(325, _iheight, WIDTH-10, HEIGHT-18)];
+        [self.commentImagebtn setBackgroundImage:[self loadImage:@"commentimage"] forState:UIControlStateNormal];
+        [self.commentImagebtn addTarget:self action:@selector(leftBtn:) forControlEvents:UIControlEventTouchDown];
         _iheight+=20;
-        [self addSubview:self.commentImage];
+        [self addSubview:self.commentImagebtn];
+
         
         NSInteger commentlabelheight=5;
-        for (int i=0; i<[[self describeDictionary:[friendsinfo.comments mutableCopy]][1] intValue]; i++) {
+        for (int i=0; i<=[[self describeDictionary:[friendsinfo.comments mutableCopy]][1] intValue]; i++) {
             commentlabelheight+=15;
         }
         
         self.commentLabel = [[UILabel alloc]initWithFrame:CGRectMake(52, _iheight, WIDTH+260, commentlabelheight)];
         self.commentLabel.backgroundColor=[UIColor colorWithRed:220.0f/255.0f green:220.0f/255.0f blue:220.0f/255.0f alpha:0.5];
-        self.commentLabel.font = [UIFont italicSystemFontOfSize:15];
+        self.commentLabel.font = [UIFont italicSystemFontOfSize:14];
         self.commentLabel.numberOfLines=0;
         self.commentLabel.text=[self describeDictionary:[friendsinfo.comments mutableCopy]][0];
-        for (int i=0; i<[[self describeDictionary:[friendsinfo.comments mutableCopy]][1] intValue]; i++) {
+        for (int i=0; i<=[[self describeDictionary:[friendsinfo.comments mutableCopy]][1] intValue]; i++) {
             _iheight+=15;
         }
         _iheight+=9;
@@ -75,11 +85,41 @@
         self.separator.backgroundColor = [UIColor colorWithRed:220.0f/255.0f green:220.0f/255.0f blue:220.0f/255.0f alpha:0.5];
         [self addSubview:self.separator];
         
+
         self.selectionStyle = UITableViewCellSelectionStyleNone;
        
     }
     return self;
 }
+
+-(void)leftBtn:(id)sender
+{
+    for(UIView *view in self.tableview.subviews)
+    {
+        
+        if([view isKindOfClass:[UIButton class]]&&(100 == view.tag))
+        {
+            [view removeFromSuperview];
+        }
+    }
+    
+    
+    UIButton* button=(UIButton*)sender;
+    CGPoint buttonCenter = CGPointMake(button.bounds.origin.x + button.bounds.size.width/2,
+                                       button.bounds.origin.y + button.bounds.size.height/2);
+    CGPoint p = [button convertPoint:buttonCenter toView:self.tableview];
+    
+    self.goodbtn=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.goodbtn.backgroundColor=[UIColor blackColor];
+    [self.goodbtn setTitle:@"赞" forState:UIControlStateNormal];
+    self.goodbtn.frame=CGRectMake(p.x-70, p.y-10, WIDTH+25, HEIGHT-10);
+    self.goodbtn.tag=100;
+    self.goodbtn.titleLabel.font = [UIFont italicSystemFontOfSize:14];
+    [self.goodbtn setTintColor:[UIColor whiteColor]];
+    [self.tableview addSubview:self.goodbtn];
+    
+}
+
 
 -(NSMutableArray*) describeDictionary:(NSMutableArray*) commentsarray
 {
@@ -113,7 +153,9 @@
     if(1)
     {
         //contentLabel;
-        _iheight+=17;
+        NSUInteger contentheight=(([friendsinfo.content length])*14)/160;
+        _iheight+=10*contentheight;
+        _iheight+=15;
     }
     
     if (friendsinfo.imagecontent!=nil) {
@@ -124,7 +166,7 @@
     _iheight+=20;
     
     //comments
-    for (int i=0; i<[[self describeDictionary:[friendsinfo.comments mutableCopy]][1] intValue]; i++) {
+    for (int i=0; i<=[[self describeDictionary:[friendsinfo.comments mutableCopy]][1] intValue]; i++) {
         _iheight+=15;
     }
 
