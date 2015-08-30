@@ -120,6 +120,17 @@
     
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    for(UIView *view in self.tableview.subviews)
+    {
+        if([view isKindOfClass:[UIButton class]]&&(100 == view.tag))
+        {
+            [view removeFromSuperview];
+        }
+    }
+}
+
 
 -(NSMutableArray*) describeDictionary:(NSMutableArray*) commentsarray
 {

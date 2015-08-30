@@ -55,20 +55,6 @@
     return cell;
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView;
-{
-    for(UIView *view in self.friendsTableView.subviews)
-    {
-        
-        if([view isKindOfClass:[UIButton class]]&&(100 == view.tag))
-        {
-            [view removeFromSuperview];
-        }
-    }
-    
-}
-
-
 
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
