@@ -46,12 +46,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FriendsCell *cell;
+    FriendsCell *cell=[FriendsCell new];
     NSUInteger row = [indexPath row];
     FriendsInfo *friendsinfo=(FriendsInfo*)[Friendsinfomap friendsInfo:[jsondata objectAtIndex:row]];
-  
-    cell = [[FriendsCell alloc]initWithStyle:UITableViewCellStyleSubtitle FriendsInfo:friendsinfo Tableview:self.friendsTableView];
-    
+   
+    cell = [[FriendsCell alloc]initWithStyle:UITableViewCellStyleSubtitle FriendsInfo:friendsinfo Tableview:self.friendsTableView Index:[indexPath row]];
+
     return cell;
 }
 

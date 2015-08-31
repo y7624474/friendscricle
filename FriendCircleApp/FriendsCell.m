@@ -8,15 +8,19 @@
 
 #import "FriendsCell.h"
 
-@implementation FriendsCell
 
+@implementation FriendsCell
+GoodLabel *goodlable;
 - (void)awakeFromNib {
     // Initialization code
+
 }
 
-- (id)initWithStyle:(UITableViewCellStyle)style  FriendsInfo:(FriendsInfo*)friendsinfo Tableview:(UITableView*) friendstableView
+- (id)initWithStyle:(UITableViewCellStyle)style  FriendsInfo:(FriendsInfo*)friendsinfo Tableview:(UITableView*) friendstableView Index:(NSInteger)index
 
 {
+    _indexgood=index;
+    goodlable=[GoodLabel getInstance];
     self.tableview=friendstableView;
     self = [super initWithStyle:style reuseIdentifier:nil];
     if (self) {
@@ -63,6 +67,18 @@
         [self.commentImagebtn addTarget:self action:@selector(leftBtn:) forControlEvents:UIControlEventTouchDown];
         _iheight+=20;
         [self addSubview:self.commentImagebtn];
+
+        if ([[goodlable.dicgood valueForKey:[NSString stringWithFormat:@"%ld",(long)_indexgood]] isEqualToString:@"YES"]) {
+            self.goodlabel=[[UILabel alloc] initWithFrame:CGRectMake(52, _iheight, WIDTH+260, 15)];
+            self.goodlabel.backgroundColor=[UIColor colorWithRed:220.0f/255.0f green:220.0f/255.0f blue:220.0f/255.0f alpha:0.5];
+            self.goodlabel.text=@"♡赞";
+            self.goodlabel.textColor=[UIColor blueColor];
+            self.goodlabel.font = [UIFont italicSystemFontOfSize:FONTSIZESMALL];
+            _iheight+=15;
+            [self addSubview:self.goodlabel];
+
+        }
+        
 
         
         NSInteger commentlabelheight=5;
@@ -112,12 +128,21 @@
     self.goodbtn=[UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.goodbtn.backgroundColor=[UIColor blackColor];
     [self.goodbtn setTitle:@"赞" forState:UIControlStateNormal];
+    [self.goodbtn addTarget:self action:@selector(commentAddGood:) forControlEvents:UIControlEventTouchUpInside];
     self.goodbtn.frame=CGRectMake(p.x-70, p.y-10, WIDTH+25, HEIGHT-10);
     self.goodbtn.tag=100;
     self.goodbtn.titleLabel.font = [UIFont italicSystemFontOfSize:FONTSIZESMALL];
     [self.goodbtn setTintColor:[UIColor whiteColor]];
     [self.tableview addSubview:self.goodbtn];
     
+}
+
+-(void)commentAddGood:(id)sender
+{
+    [goodlable.dicgood setObject:@"YES" forKey:[NSString stringWithFormat:@"%ld",(long)_indexgood]];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableview reloadData];
+    });
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -175,6 +200,10 @@
     //time
     _iheight+=20;
     
+    if ([[goodlable.dicgood valueForKey:[NSString stringWithFormat:@"%ld",(long)_indexgood]] isEqualToString:@"YES"]) {
+        _iheight+=15;
+    }
+
     //comments
     for (int i=0; i<=[[self describeDictionary:[friendsinfo.comments mutableCopy]][1] intValue]; i++) {
         _iheight+=15;
