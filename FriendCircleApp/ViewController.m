@@ -81,7 +81,18 @@
     
     FriendsInfo *friendsinfo=(FriendsInfo*)[Friendsinfomap friendsInfo:[jsondata objectAtIndex:row]];
     
-    return [[FriendsCell new] calculateHeight:friendsinfo];
+    return [[FriendsCell new] calculateHeight:friendsinfo Index:[indexPath row]];
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    for(UIView *view in self.friendsTableView.subviews)
+    {
+        if([view isKindOfClass:[UIButton class]]&&(100 == view.tag))
+        {
+            [view removeFromSuperview];
+        }
+    }
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView

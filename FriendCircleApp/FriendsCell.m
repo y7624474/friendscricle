@@ -203,9 +203,10 @@ GoodLabel *goodlable;
     return result;
 }
 
--(NSInteger)calculateHeight:(FriendsInfo*)friendsinfo;
+-(NSInteger)calculateHeight:(FriendsInfo*)friendsinfo Index:(NSInteger) index
 
 {
+    _indexgood=index;
     _iheight=28;
     
     //contentLabel;
@@ -222,7 +223,7 @@ GoodLabel *goodlable;
     _iheight+=20;
     
     if ([[goodlable.dicgood valueForKey:[NSString stringWithFormat:@"%ld",(long)_indexgood]] isEqualToString:@"YES"]) {
-        _iheight+=15;
+        _iheight+=20;
     }
 
     //comments

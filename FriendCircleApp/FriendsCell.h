@@ -33,6 +33,6 @@
 @property NSInteger indexgood;
 @property UITableView* tableview;
 -(id)initWithStyle:(UITableViewCellStyle)style  FriendsInfo:(FriendsInfo*)friendsinfo Tableview:(UITableView*) friendsTableView Index:(NSInteger) index;
--(NSInteger)calculateHeight:(FriendsInfo*)friendsinfo;
+-(NSInteger)calculateHeight:(FriendsInfo*)friendsinfo Index:(NSInteger) index;
 
 @end
