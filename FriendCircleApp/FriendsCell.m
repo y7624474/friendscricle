@@ -127,9 +127,15 @@ GoodLabel *goodlable;
     
     self.goodbtn=[UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.goodbtn.backgroundColor=[UIColor blackColor];
-    [self.goodbtn setTitle:@"赞" forState:UIControlStateNormal];
+    if ([[goodlable.dicgood valueForKey:[NSString stringWithFormat:@"%ld",(long)_indexgood]] isEqualToString:@"YES"]) {
+        [self.goodbtn setTitle:@"取消点赞" forState:UIControlStateNormal];
+    }
+    else
+    {
+        [self.goodbtn setTitle:@"赞" forState:UIControlStateNormal];
+    }
     [self.goodbtn addTarget:self action:@selector(commentAddGood:) forControlEvents:UIControlEventTouchUpInside];
-    self.goodbtn.frame=CGRectMake(p.x-70, p.y-10, WIDTH+25, HEIGHT-10);
+    self.goodbtn.frame=CGRectMake(p.x-90, p.y-10, WIDTH+45, HEIGHT-10);
     self.goodbtn.tag=100;
     self.goodbtn.titleLabel.font = [UIFont italicSystemFontOfSize:FONTSIZESMALL];
     [self.goodbtn setTintColor:[UIColor whiteColor]];
@@ -139,7 +145,22 @@ GoodLabel *goodlable;
 
 -(void)commentAddGood:(id)sender
 {
-    [goodlable.dicgood setObject:@"YES" forKey:[NSString stringWithFormat:@"%ld",(long)_indexgood]];
+    if ([[goodlable.dicgood valueForKey:[NSString stringWithFormat:@"%ld",(long)_indexgood]] isEqualToString:@"YES"])
+    {
+        [goodlable.dicgood setObject:@"NO" forKey:[NSString stringWithFormat:@"%ld",(long)_indexgood]];
+    }
+    else
+    {
+        [goodlable.dicgood setObject:@"YES" forKey:[NSString stringWithFormat:@"%ld",(long)_indexgood]];
+    }
+   
+    for(UIView *view in self.tableview.subviews)
+    {
+        if([view isKindOfClass:[UIButton class]]&&(100 == view.tag))
+        {
+            [view removeFromSuperview];
+        }
+    }
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableview reloadData];
     });
