@@ -59,8 +59,10 @@ GoodLabel *goodlable;
         self.timeLabel = [[UILabel alloc]initWithFrame:CGRectMake(52, _iheight, WIDTH+30, HEIGHT-10)];
         self.timeLabel.font = [UIFont italicSystemFontOfSize:10];
         self.timeLabel.text=friendsinfo.time;
+        
         [self addSubview:self.timeLabel];
         
+
 
         self.commentImagebtn=[[UIButton alloc]initWithFrame:CGRectMake(325, _iheight, WIDTH-10, HEIGHT-18)];
         [self.commentImagebtn setBackgroundImage:[self loadImage:@"commentimage"] forState:UIControlStateNormal];
@@ -135,11 +137,25 @@ GoodLabel *goodlable;
         [self.goodbtn setTitle:@"赞" forState:UIControlStateNormal];
     }
     [self.goodbtn addTarget:self action:@selector(commentAddGood:) forControlEvents:UIControlEventTouchUpInside];
-    self.goodbtn.frame=CGRectMake(p.x-90, p.y-10, WIDTH+45, HEIGHT-10);
+    self.goodbtn.frame=CGRectMake(p.x-45, p.y-10, WIDTH+5, HEIGHT-10);
     self.goodbtn.tag=100;
     self.goodbtn.titleLabel.font = [UIFont italicSystemFontOfSize:FONTSIZESMALL];
     [self.goodbtn setTintColor:[UIColor whiteColor]];
     [self.tableview addSubview:self.goodbtn];
+
+    
+    POPBasicAnimation *popOutAnimation = [POPBasicAnimation animation];
+    popOutAnimation.property = [POPAnimatableProperty propertyWithName:kPOPViewFrame];
+    
+    popOutAnimation.toValue = [NSValue valueWithCGRect:CGRectMake(p.x-90, p.y-10, WIDTH+45, HEIGHT-10)];
+
+//    popOutAnimation.springBounciness = 10.0;
+//    popOutAnimation.springSpeed = 0.1;
+    
+    [self.goodbtn pop_addAnimation:popOutAnimation forKey:@"slide"];
+    
+
+    
     
 }
 

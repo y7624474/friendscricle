@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FriendsInfo.h"
 #import "GoodLabel.h"
+#import <POP.h>
 #define WIDTH 30
 #define HEIGHT 30
 #define FONTSIZESMALL 14

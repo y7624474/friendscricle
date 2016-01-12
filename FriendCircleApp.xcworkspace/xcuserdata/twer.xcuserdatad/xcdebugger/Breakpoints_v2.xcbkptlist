@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FriendCircleApp/FriendsCell.m"
-            timestampString = "462708511.384328"
+            timestampString = "463391102.91234"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
             landmarkName = "-calculateHeight:Index:"
             landmarkType = "5">
          </BreakpointContent>

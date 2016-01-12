@@ -20,11 +20,17 @@ PODS:
   - AFNetworking/UIKit (2.6.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - MVSpeechSynthesizer (1.0.1)
+  - pop (1.0.7)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
+  - MVSpeechSynthesizer
+  - pop (~> 1.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
+  MVSpeechSynthesizer: d4deb5221bff17dfda644298497be3b4fa189040
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
 
 COCOAPODS: 0.38.2

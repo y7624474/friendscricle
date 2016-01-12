@@ -26,6 +26,7 @@
     self.navigationItem.rightBarButtonItem = cameraButton;
 }
 
+
 -(void)initView{
     CGRect frame=CGRectMake(0, -40, 380, 710);
     self.friendsTableView=[[UITableView alloc] initWithFrame:frame style:UITableViewStyleGrouped];

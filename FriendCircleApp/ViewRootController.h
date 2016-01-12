@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewRootController : UIViewController
+@interface ViewRootController : UIViewController <UITextViewDelegate>
 @property UIButton* button;
+@property (strong)UITextView *helpTextView;
+
 @end

@@ -9,7 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MVSpeechSynthesizer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>pop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>9B658C609F1C03F31C3C9EBD8F293139</key>
+		<key>268331187F72B5EF315F1C5C8E392DAF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E0A0843C35E4406010926441E5E9C150</key>
+		<key>2B378BB99E277BEF45879A4A249BC1B5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>47C800E42623009B7192B025B3DD25A1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9AA8C86C0B163001DEABA2444487A7EA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

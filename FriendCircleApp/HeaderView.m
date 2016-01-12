@@ -33,8 +33,9 @@
         headerLabel.font = [UIFont italicSystemFontOfSize:FONTSIZELARGE];
         headerLabel.textColor=[UIColor whiteColor];
         headerLabel.text=selfinfo.headname;
+        self.alpha=1;
         [self addSubview:headerLabel];
-        
+       
     }
     return self;
     
